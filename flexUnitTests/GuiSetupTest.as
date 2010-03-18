@@ -35,5 +35,14 @@ package flexUnitTests
 				assertThat(button.label, equalTo(i.toString()));
 			}
 		}
+		[Test]
+		public function numbersShouldMapToSameObject():void {
+			for (var i:Number = 0; i <= 9; i++) {
+				var button:Button = panel.getButton(i);
+				var button2:Button = panel.getButton(i);
+				assertThat(button, equalTo(button2));
+			}
+		}
+	
 	}
 }
