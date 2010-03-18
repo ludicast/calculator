@@ -13,6 +13,12 @@ package com.ludicast.model
 			return instance;
 		}
 		
+		public function initialize():void {
+			screenValue = "";
+			resultValue = 0;
+		}
+		
 		public var screenValue:String = "";
+		public var resultValue:Number = 0;
 	}
 }

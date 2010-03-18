@@ -1,5 +1,6 @@
 package flexUnitTests.gui
 {
+	import com.ludicast.model.CalculatorModel;
 	import com.ludicast.view.CalculatorPanel;
 	
 	import mx.events.FlexEvent;
@@ -16,6 +17,9 @@ package flexUnitTests.gui
 			panel = new CalculatorPanel();
 			Async.proceedOnEvent( this, panel, FlexEvent.CREATION_COMPLETE, 200 );
 			UIImpersonator.addChild( panel );
+			
+			CalculatorModel.getInstance().initialize();
+			
 		}
 		
 	}

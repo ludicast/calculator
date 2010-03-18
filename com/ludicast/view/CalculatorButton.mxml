@@ -7,7 +7,6 @@
 			private function modifyModel():void {
 				CalculatorModel.getInstance().screenValue += label;				
 			}
-			
 		]]>
 	</mx:Script>
 </mx:Button>

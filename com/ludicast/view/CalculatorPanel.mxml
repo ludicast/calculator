@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" xmlns:view="com.ludicast.view.*">
-	<mx:Label id="output" text="{model.screenValue}" fontSize="20" width="100%" />
+	<mx:Label id="resultWindow" text="{model.resultValue}" fontSize="20" width="100%" />
+	<mx:Label id="output" text="{model.screenValue}" fontSize="20" width="100%" />	
 	<mx:Script>
 		<![CDATA[
 			import com.ludicast.model.CalculatorModel;
@@ -10,10 +11,15 @@
 			[Bindable]
 			private var model:CalculatorModel = CalculatorModel.getInstance();
 			
-			public function getButton(id:Number):Button {
-				return Button(this["button" + id.toString()]);
+			public function getButton(id:*):Button {
+				return Button(this["button" + id]);
 			}
 
+		 	public function add():void {
+				model.resultValue = Number(model.screenValue) + model.resultValue;
+				model.screenValue = "";
+			}		
+			
 
 		]]>
 	</mx:Script>
@@ -34,5 +40,6 @@
 	</mx:HBox>
 	<mx:HBox>
 		<view:CalculatorButton id="button0" label="0" />	
-	</mx:HBox>	
+		<mx:Button id="buttonPlus" click="add()" label="+" />
+	</mx:HBox>
 </mx:VBox>
