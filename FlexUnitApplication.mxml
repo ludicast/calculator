@@ -4,15 +4,12 @@
 	<![CDATA[
 
 		import org.flexunit.runner.Request;
-		import flexUnitTests.CalculatorLogicTester;
+		import flexUnitTests.CalculatorTestSuite;
 
 		public function currentRunTestSuite():Array
 		{
 			var testsToRun:Array = new Array();
-			testsToRun.push(Request.method( flexUnitTests.CalculatorLogicTester,"testAdd"));
-			testsToRun.push(Request.method( flexUnitTests.CalculatorLogicTester,"testSubtract"));
-			testsToRun.push(Request.method( flexUnitTests.CalculatorLogicTester,"testMultiply"));
-			testsToRun.push(Request.method( flexUnitTests.CalculatorLogicTester,"testDivide"));
+			testsToRun.push(flexUnitTests.CalculatorTestSuite);
 			return testsToRun;
 		}
 		private function onCreationComplete():void
