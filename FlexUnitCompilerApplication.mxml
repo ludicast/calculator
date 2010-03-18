@@ -3,9 +3,17 @@
 <mx:Script>
 	<![CDATA[
 
-			import flexUnitTests.GuiSetupTest;
+			import flexUnitTests.gui.GuiSuite;
 
-			private var flexUnitTests_GuiSetup_obj:flexUnitTests.GuiSetupTest;
+			private var flexUnitTests_gui_GuiSuire_obj:flexUnitTests.gui.GuiSuite;
+	]]>
+</mx:Script>	
+<mx:Script>
+	<![CDATA[
+
+			import flexUnitTests.gui.GuiLayoutTest;
+
+			private var flexUnitTests_GuiSetup_obj:flexUnitTests.gui.GuiLayoutTest;
 	]]>
 </mx:Script>
 	

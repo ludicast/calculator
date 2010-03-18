@@ -1,27 +1,16 @@
-package flexUnitTests
+package flexUnitTests.gui
 {
 	import com.ludicast.view.CalculatorPanel;
 	
 	import mx.controls.Button;
 	import mx.controls.Label;
-	import mx.events.FlexEvent;
 	
 	import org.flexunit.assertThat;
-	import org.flexunit.async.Async;
-	import org.fluint.uiImpersonation.UIImpersonator;
 	import org.hamcrest.core.isA;
 	import org.hamcrest.object.equalTo;
 	
-	public class GuiSetupTest
+	public class GuiLayoutTest extends GuiSetup
 	{
-		private var panel:CalculatorPanel
-		
-		[Before(async,ui)]
-		public function setUp():void {
-			panel = new CalculatorPanel();
-			Async.proceedOnEvent( this, panel, FlexEvent.CREATION_COMPLETE, 200 );
-			UIImpersonator.addChild( panel );
-		}
 		
 		[Test]
 		public function shouldHaveOutputPanel():void {
