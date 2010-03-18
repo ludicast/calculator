@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" minWidth="1024" minHeight="768" xmlns:view="com.ludicast.view.*">
+<mx:Application creationComplete="loadEnv()" xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" minWidth="1024" minHeight="768" xmlns:view="com.ludicast.view.*">
 	<view:CalculatorPanel width="100%" height="100%" />
+	<mx:Script>
+		<![CDATA[
+			public function loaded(event:Event):void {
+	//			trace (URLLoader(event.target).data);
+			}
+			
+			
+			public function loadEnv():void {
+	//			var req:URLRequest = new URLRequest("http://localhost:4567/add/44/44");
+	//			var loader:URLLoader = new URLLoader();
+	//			loader.addEventListener(Event.COMPLETE,loaded);
+	//			loader.load(req);
+			}
+			
+			
+		]]>
+	</mx:Script>
 </mx:Application>
