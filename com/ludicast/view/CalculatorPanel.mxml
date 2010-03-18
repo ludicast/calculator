@@ -1,36 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" xmlns:view="com.ludicast.view.*">
-	<mx:Label id="output" fontSize="20" width="100%" />
+	<mx:Label id="output" text="{model.screenValue}" fontSize="20" width="100%" />
 	<mx:Script>
 		<![CDATA[
+			import com.ludicast.model.CalculatorModel;
+			
 			import mx.controls.Button;
+			
+			[Bindable]
+			private var model:CalculatorModel = CalculatorModel.getInstance();
+			
 			public function getButton(id:Number):Button {
 				return Button(this["button" + id.toString()]);
 			}
 
-			protected function numClicked(value:Number):void
-			{
-				output.text += value.toString();
-			}
 
 		]]>
 	</mx:Script>
 	<mx:HBox>
-		<view:CalculatorButton click="numClicked(7)" id="button7" label="7" />
-		<view:CalculatorButton click="numClicked(8)" id="button8" label="8" />		
-		<view:CalculatorButton click="numClicked(9)" id="button9" label="9" />		
+		<view:CalculatorButton id="button7" label="7" />
+		<view:CalculatorButton id="button8" label="8" />		
+		<view:CalculatorButton id="button9" label="9" />		
 	</mx:HBox>
 	<mx:HBox>
-		<view:CalculatorButton click="numClicked(4)" id="button4" label="4" />
-		<view:CalculatorButton click="numClicked(5)" id="button5" label="5" />		
-		<view:CalculatorButton click="numClicked(6)" id="button6" label="6" />		
+		<view:CalculatorButton id="button4" label="4" />
+		<view:CalculatorButton id="button5" label="5" />		
+		<view:CalculatorButton id="button6" label="6" />		
 	</mx:HBox>
 	<mx:HBox>
-		<view:CalculatorButton click="numClicked(1)" id="button1" label="1" />
-		<view:CalculatorButton click="numClicked(2)" id="button2" label="2" />		
-		<view:CalculatorButton click="numClicked(3)" id="button3" label="3" />		
+		<view:CalculatorButton id="button1" label="1" />
+		<view:CalculatorButton id="button2" label="2" />		
+		<view:CalculatorButton id="button3" label="3" />		
 	</mx:HBox>
 	<mx:HBox>
-		<view:CalculatorButton click="numClicked(0)" id="button0" label="0" />	
+		<view:CalculatorButton id="button0" label="0" />	
 	</mx:HBox>	
 </mx:VBox>

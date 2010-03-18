@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mx:Button xmlns:mx="http://www.adobe.com/2006/mxml">
-	
+<mx:Button click="modifyModel()" xmlns:mx="http://www.adobe.com/2006/mxml">
+	<mx:Script>
+		<![CDATA[
+			import com.ludicast.model.CalculatorModel;
+			
+			private function modifyModel():void {
+				CalculatorModel.getInstance().screenValue += label;				
+			}
+			
+		]]>
+	</mx:Script>
 </mx:Button>
