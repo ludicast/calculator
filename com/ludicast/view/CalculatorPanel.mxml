@@ -4,6 +4,7 @@
 	<mx:Label id="output" text="{model.screenValue}" fontSize="20" width="100%" />	
 	<mx:Script>
 		<![CDATA[
+			import com.ludicast.CalculatorLogicHelper;
 			import com.ludicast.model.CalculatorModel;
 			
 			import mx.controls.Button;
@@ -16,8 +17,7 @@
 			}
 
 		 	public function add():void {
-				model.resultValue = Number(model.screenValue) + model.resultValue;
-				model.screenValue = "";
+				new CalculatorLogicHelper().add();
 			}		
 			
 

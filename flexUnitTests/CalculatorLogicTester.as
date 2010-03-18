@@ -1,8 +1,7 @@
 package flexUnitTests
 {
 	import com.ludicast.CalculatorLogicHelper;
-	
-	import flexunit.framework.Assert;
+	import com.ludicast.model.CalculatorModel;
 	
 	import org.flexunit.assertThat;
 	import org.hamcrest.object.equalTo;
@@ -11,7 +10,7 @@ package flexUnitTests
 	{
 		// Reference declaration for class to test
 		private var helper:CalculatorLogicHelper;
-		
+		private var model:CalculatorModel = CalculatorModel.getInstance();
 		
 		[Before]
 		public function setupCalculator():void {
@@ -22,29 +21,28 @@ package flexUnitTests
 		[Test]
 		public function testAdd():void
 		{
-			var result:Number = helper.add(5,5); 
-			assertThat(result,equalTo(10));
-		}
-		
-		[Test]
-		public function testDivide():void
-		{
-			var result:Number = helper.divide(6,2); 
-			assertThat(result,equalTo(3));
+			model.screenValue = "5"
+			model.resultValue = 5;
+			helper.add();
+			assertThat(model.resultValue,equalTo(10));
 		}
 		
 		[Test]
 		public function testMultiply():void
 		{
-			var result:Number = helper.multiply(5,5); 
-			assertThat(result,equalTo(25));
+			model.screenValue = "5";
+			model.resultValue = 5;
+			helper.multiply();
+			assertThat(model.resultValue,equalTo(25));
 		}
 		
 		[Test]
 		public function testSubtract():void
 		{
-			var result:Number = helper.subtract(5,2); 
-			assertThat(result,equalTo(3));
+			model.screenValue = "2";
+			model.resultValue = 5;
+			helper.subtract(); 
+			assertThat(model.resultValue,equalTo(3));
 		}
 	}
 }

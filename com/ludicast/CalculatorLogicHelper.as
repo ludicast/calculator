@@ -1,26 +1,25 @@
 package com.ludicast
 {
+	import com.ludicast.model.CalculatorModel;
+
 	public class CalculatorLogicHelper
 	{	
-		public function CalculatorLogicHelper()
-		{
-	
-		}
+		protected var model:CalculatorModel = CalculatorModel.getInstance();
 		
-		public function add(param1:Number, param2:Number):Number {
-			return param1 + param2;
+		
+		public function add():void {
+			model.resultValue = model.resultValue + Number(model.screenValue);
+			model.screenValue = "";
+		}
+
+		public function subtract():void {
+			model.resultValue =  model.resultValue - Number(model.screenValue);
+			model.screenValue = "";
 		}	
 
-		public function subtract(param1:Number, param2:Number):Number {
-			return param1 - param2;			
-		}	
-
-		public function divide(param1:Number, param2:Number):Number {
-			return param1 / param2;			
-		}	
-
-		public function multiply(param1:Number, param2:Number):Number {
-			return param1 * param2;			
+		public function multiply():void {
+			model.resultValue = model.resultValue * Number(model.screenValue);	
+			model.screenValue = "";
 		}	
 		
 		
